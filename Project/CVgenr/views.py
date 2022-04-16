@@ -13,10 +13,14 @@ def cvcreate(request):
         form = CvDetailsForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            return redirect('button')
 
 
     context = {'form':form}
     return render(request, 'CVpages/trial.html', context)
+
+
+def button(request):
+    return render(request, 'CVpages/dil_preButtons.html')
 
 
