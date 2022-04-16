@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.cvcreate),
+    path('cvcreate/', views.cvcreate, name="cv_create"),
 ]
 
 
