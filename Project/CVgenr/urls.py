@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+app_name = "CVpages"
+
 urlpatterns = [
     path('cvcreate/', views.cvcreate, name="cv_create"),
     path('button/', views.button, name="button"),

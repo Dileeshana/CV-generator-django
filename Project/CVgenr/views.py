@@ -31,7 +31,7 @@ def button(request):
 
 
 class IndexView(generic.TemplateView):
-    template= "CVpages/index.html"
+    template_name= "CVpages/dil_index.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -43,7 +43,7 @@ class IndexView(generic.TemplateView):
 
 class PortfolioView(generic.ListView):
     model = Portfolio
-    template = "CVpages/portfolio.html"
+    template_name = "CVpages/dil_portfolio.html"
     paginate_by =10
 
     def get_queryset(self):
@@ -51,4 +51,4 @@ class PortfolioView(generic.ListView):
 
 class PortfolioDetailed(generic.DetailView):
     model = Portfolio
-    template = "CVpages/portfolio-detail.html"
+    template_name = "CVpages/dil_portfolio-detail.html"
