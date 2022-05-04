@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CV Create Form</title>
 
 </head>
 <body>
@@ -20,97 +20,77 @@
         </div>
     </div>
 
-    <form action="" method="POST">
+    <div class="container">
+        <form action="" method="POST" class="row g-3">
 
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Name</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-        </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Birthday</label>
-            <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-        </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput3" class="form-label">Address</label>
-            <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Example input placeholder">
-        </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput4" class="form-label">Contact</label>
-            <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="Another input placeholder">
-        </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput5" class="form-label">House Contact</label>
-            <input type="text" class="form-control" id="formGroupExampleInput5" placeholder="Example input placeholder">
-        </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput6" class="form-label">Email</label>
-            <input type="Email" class="form-control" id="formGroupExampleInput6" placeholder="Another input placeholder">
-        </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput7" class="form-label">Postal Code</label>
-            <input type="text" class="form-control" id="formGroupExampleInput7" placeholder="Another input placeholder">
-        </div>
-        <div class="mb-3">
-            <label class="formGroupExampleInput8">Project</label>
-            <textarea class="form-control" aria-label="With textarea" id="formGroupExampleInput8"></textarea>
-        </div>
-        <div class="mb-3">
-            <label class="formGroupExampleInput9">Certificate</label>
-            <textarea class="form-control" aria-label="With textarea" id="formGroupExampleInput9"></textarea>
-        </div>
-        <div class="mb-3">
-            <label class="formGroupExampleInput10">Experience</label>
-            <textarea class="form-control" aria-label="With textarea" id="formGroupExampleInput10"></textarea>
-        </div>
-        <div class="mb-3">
-            <label class="formGroupExampleInput11">Volunteering</label>
-            <textarea class="form-control" aria-label="With textarea" id="formGroupExampleInput11"></textarea>
-        </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput12" class="form-label">OL Results</label>
-            <input type="text" class="form-control" id="formGroupExampleInput12" placeholder="Another input placeholder">
-        </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput13" class="form-label">AL Subject Stream</label>
-            <input type="text" class="form-control" id="formGroupExampleInput13" placeholder="Another input placeholder">
-        </div>
-        <div class="btn-group">
-            <label for="formGroupExampleInput14" class="form-label">Subject 1</label>
-            <select id="formGroupExampleInput14" class="form-select">
-            <option selected>Choose...</option>
-            <option>Com.. Maths</option>
-            <option>Chem</option>
-            <option>Physics</option>
-            <option>IT</option>
-            </select>
-        </div>
-        <div class="btn-group">
-            <label for="formGroupExampleInput15" class="form-label">Subject 2</label>
-            <select id="formGroupExampleInput15" class="form-select">
-            <option selected>Choose...</option>
-            <option>Com.. Maths</option>
-            <option>Chem</option>
-            <option>Physics</option>
-            <option>IT</option>
-            </select>
-        </div>
-        <div class="btn-group">
-            <label for="formGroupExampleInput16" class="form-label">Subject 3</label>
-            <select id="formGroupExampleInput16" class="form-select">
-            <option selected>Choose...</option>
-            <option>Com.. Maths</option>
-            <option>Chem</option>
-            <option>Physics</option>
-            <option>IT</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="formGroupExampleInput17" class="form-label">Skill</label>
-            <textarea class="form-control" aria-label="With textarea" id="formGroupExampleInput17"></textarea>
-        </div>
+            {% csrf_token %}
+            {{form.as_p}}
 
-        <input type="submit" name="Submit" value="Get Resume">
-    </form>
+            {% comment %} <div class="col-10">
+                <label for="formGroupExampleInput" class="form-label">Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+            </div>
+            <div class="col-md-6">
+                <label for="formGroupExampleInput2" class="form-label">Birthday</label>
+                <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+            </div>
+            <div class="col-10">
+                <label for="formGroupExampleInput3" class="form-label">Address</label>
+                <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Example input placeholder">
+            </div>
+            <div class="col-4">
+                <label for="formGroupExampleInput4" class="form-label">Contact</label>
+                <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="Another input placeholder">
+            </div>
+            <div class="col-4">
+                <label for="formGroupExampleInput5" class="form-label">House Contact</label>
+                <input type="text" class="form-control" id="formGroupExampleInput5" placeholder="Example input placeholder">
+            </div>
+            <div class="col-10">
+                <label for="formGroupExampleInput6" class="form-label">Email</label>
+                <input type="Email" class="form-control" id="formGroupExampleInput6" placeholder="Another input placeholder">
+            </div>
+            <div class="col-10">
+                <label class="formGroupExampleInput10">Experience</label>
+                <textarea class="form-control" aria-label="With textarea" id="formGroupExampleInput10"></textarea>
+            </div>
+            <div class="col-6">
+                <label for="formGroupExampleInput12" class="form-label">OL Results</label>
+                <input type="text" class="form-control" id="formGroupExampleInput12" placeholder="Another input placeholder">
+            </div>
+            <div class="col-6">
+                <label for="formGroupExampleInput13" class="form-label">AL Subject Stream</label>
+                <input type="text" class="form-control" id="formGroupExampleInput13" placeholder="Another input placeholder">
+            </div>
+
+            <div class="col-10">
+                <label for="formGroupExampleInput17" class="form-label">Skill</label>
+                <textarea class="form-control" aria-label="With textarea" id="formGroupExampleInput17"></textarea>
+            </div> {% endcomment %}
+    
+            <input type="submit" name="Submit" value="Send CV details" class="btn btn-primary">
+        </form>
+    </div>
+
+    <script>
+        //Query All input fields
+        var form_fields = document.getElementsByTagName('input')
+        form_fields[1].placeholder='Full Name..';
+        form_fields[2].placeholder='Your NIC or Passport ID';
+        form_fields[3].placeholder='Date of Birth';
+        form_fields[4].placeholder='Address';
+        form_fields[5].placeholder='Mobile Contact';
+        form_fields[6].placeholder='Home Contact';
+        form_fields[7].placeholder='example@mail.com';
+        form_fields[8].placeholder='Experience';
+        form_fields[9].placeholder='OL Results';
+        form_fields[10].placeholder='AL Stream';
+
+
+        for (var field in form_fields){	
+            form_fields[field].className += ' form-control'
+        }
+    </script>
 
     
 </body>

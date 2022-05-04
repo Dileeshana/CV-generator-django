@@ -10,19 +10,19 @@ from django.contrib import messages
 from .models import * 
 from .forms import CvDetailsForm
 
-def cvcreate(request):
+# def cvcreate(request):
 
-    form = CvDetailsForm()
-    if request.method == 'POST':
-        #print('',request.POST)
-        form = CvDetailsForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('button')
+#     form = CvDetailsForm()
+#     if request.method == 'POST':
+#         #print('',request.POST)
+#         form = CvDetailsForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('/button')
 
 
-    context = {'form':form}
-    return render(request, 'CVpages/trial.html', context)
+#     context = {'form':form}
+#     return render(request, 'CVpages/trial.html', context)
 
 
 def button(request):
@@ -30,25 +30,40 @@ def button(request):
 
 
 
-class IndexView(generic.TemplateView):
-    template_name= "CVpages/dil_index.html"
+def ogcreatehtml(request):
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+    form = CvDetailsForm()
+    if request.method == 'POST':
+        #print('',request.POST)
+        form = CvDetailsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/button')
 
-        portfolio = Portfolio.objects.filter(is_active=True)
+    context = {'form':form}
+    return render(request, 'CVpages/dilcvcreate.html', context)
 
-        context["portfolio"] = portfolio
-        return context
 
-class PortfolioView(generic.ListView):
-    model = Portfolio
-    template_name = "CVpages/dil_portfolio.html"
-    paginate_by =10
 
-    def get_queryset(self):
-        return super().get_queryset().filter(is_active=True)
+# class IndexView(generic.TemplateView):
+#     template_name= "CVpages/dil_index.html"
 
-class PortfolioDetailed(generic.DetailView):
-    model = Portfolio
-    template_name = "CVpages/dil_portfolio-detail.html"
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+
+#         portfolio = Portfolio.objects.filter(is_active=True)
+
+#         context["portfolio"] = portfolio
+#         return context
+
+# class PortfolioView(generic.ListView):
+#     model = Portfolio
+#     template_name = "CVpages/dil_portfolio.html"
+#     paginate_by =10
+
+#     def get_queryset(self):
+#         return super().get_queryset().filter(is_active=True)
+
+# class PortfolioDetailed(generic.DetailView):
+#     model = Portfolio
+#     template_name = "CVpages/dil_portfolio-detail.html"
