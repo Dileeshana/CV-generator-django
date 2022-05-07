@@ -26,7 +26,9 @@ from .forms import CvDetailsForm
 
 
 def button(request):
-    return render(request, 'CVpages/dil_preButtons.html')
+    cvdata = Cvdetails.objects.all()
+
+    return render(request, 'CVpages/dil_preBtn.html', {'cvdata': cvdata})
 
 
 
@@ -42,6 +44,16 @@ def ogcreatehtml(request):
 
     context = {'form':form}
     return render(request, 'CVpages/dilcvcreate.html', context)
+
+
+def updatecvdet(request, pk):
+
+    cvdata = Cvdetails.objects.get(id=pk)
+    form = CvDetailsForm(instance=cvdata)
+
+    context = {'form':form}
+    return render(request, 'CVpages/dilcvcreate.html', context)
+
 
 
 

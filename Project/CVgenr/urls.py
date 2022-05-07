@@ -8,6 +8,7 @@ urlpatterns = [
     path('button/', views.button, name="button"),
 
     path('ogcreatehtml/', views.ogcreatehtml, name="ogcreatehtml"),
+    path('updatecv_det/<str:pk>/', views.updatecvdet, name="updatecv_det"),
 
     # path('index/', views.IndexView.as_view(), name="index_view"),
     # path('portfolio/', views.PortfolioView.as_view(), name="portfolio_view"),
