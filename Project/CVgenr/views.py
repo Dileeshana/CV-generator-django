@@ -46,10 +46,10 @@ def ogcreatehtml(request):
     return render(request, 'CVpages/dilcvcreate.html', context)
 
 
-def updatecvdet(request, pk):
+def updatecv(request, pk):
 
-    cvdata = Cvdetails.objects.get(id=pk)
-    form = CvDetailsForm(instance=cvdata)
+    # update isn't working check it
+    form = CvDetailsForm()
 
     context = {'form':form}
     return render(request, 'CVpages/dilcvcreate.html', context)

@@ -42,8 +42,11 @@
                     <td>{{c.name}}</td>
                     <td>{{c.nic}}</td>
                     <td><a href="" class="btn btn-primary">Preview</a></td>
-                    <td><a href="{% url 'updatecv_det' c.id %}" class="btn btn-sm btn-info">Edit</a></td>
-                    <td><a href="" class="btn btn-primary">Discard</a></td>
+
+                    {% comment %} <td><a class="btn btn-sm btn-info" href="{% url 'update_Cv' c.id %}">Edit</a></td> {% endcomment %}
+                    <td><a class="btn btn-sm btn-info" href="">Edit</a></td>
+
+                    <td><a class="btn btn-sm btn-info" href="">Discard</a></td>
                 </tr>
 
             {% endfor %}
