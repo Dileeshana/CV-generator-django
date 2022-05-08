@@ -43,10 +43,12 @@
                     <td>{{c.nic}}</td>
                     <td><a href="" class="btn btn-primary">Preview</a></td>
 
-                    {% comment %} <td><a class="btn btn-sm btn-info" href="{% url 'update_Cv' c.id %}">Edit</a></td> {% endcomment %}
-                    <td><a class="btn btn-sm btn-info" href="">Edit</a></td>
+                    <td><a class="btn btn-sm btn-info" href="{% url 'update_cv' c.id %}">Edit</a></td>
+                    {% comment %} <td><a class="btn btn-sm btn-info" href="">Edit</a></td> {% endcomment %}
 
-                    <td><a class="btn btn-sm btn-info" href="">Discard</a></td>
+                    <td><a class="btn btn-sm btn-info" href="{% url 'delete_cv' c.id %}">Discard</a></td>
+                    {% comment %} <td><a class="btn btn-sm btn-info" href="">Discard</a></td> {% endcomment %}
+
                 </tr>
 
             {% endfor %}

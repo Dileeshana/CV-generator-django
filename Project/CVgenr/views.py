@@ -55,7 +55,10 @@ def updatecv(request, pk):
     return render(request, 'CVpages/dilcvcreate.html', context)
 
 
+def deleteCv(request, pk):
 
+    context = {}
+    return render(request, 'CVpages/dilcvdiscard.html', context)
 
 # class IndexView(generic.TemplateView):
 #     template_name= "CVpages/dil_index.html"
