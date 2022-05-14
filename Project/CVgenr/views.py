@@ -1,11 +1,12 @@
 from multiprocessing import context
-from operator import mod
-from pyexpat import model
-from re import template
+from django.template import RequestContext
+#from operator import mod
+#from pyexpat import model
+#from re import template
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
-from django.views import generic
+#from django.views import generic
 from django.contrib import messages
 from .models import * 
 from .forms import CvDetailsForm
@@ -25,7 +26,7 @@ from .forms import CvDetailsForm
 #     return render(request, 'CVpages/trial.html', context)
 
 
-def button(request):
+def readcvbtn(request):
     cvdata = Cvdetails.objects.all()
 
     return render(request, 'CVpages/dil_preBtn.html', {'cvdata': cvdata})
@@ -46,18 +47,44 @@ def ogcreatehtml(request):
     return render(request, 'CVpages/dilcvcreate.html', context)
 
 
+# def updatecv(request, pk):
+
+#     cvdata = Cvdetails.objects.get(id=pk)
+#     form = CvDetailsForm(instance= cvdata)
+
+#     if request.method == 'POST':
+#         form = Cvdetails(request.POST, instance= cvdata)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('/button')
+
+#     context = {'form':form}
+#     return render(request, 'CVpages/dilcvcreate.html', context)
+
 def updatecv(request, pk):
 
-    # update isn't working check it
-    form = CvDetailsForm()
+    cvdata = Cvdetails.objects.get(id=pk)
+    form = CvDetailsForm(instance = cvdata)
+
+    if request.method == 'POST':
+        form = Cvdetails(request.POST, instance = cvdata)
+        if form.is_valid():
+            form.save()
+            return redirect('/button')
 
     context = {'form':form}
     return render(request, 'CVpages/dilcvcreate.html', context)
 
 
 def deleteCv(request, pk):
+    cvdata = Cvdetails.objects.get(id=pk)
 
-    context = {}
+    if request.method == 'POST':
+            cvdata.delete()
+            return redirect('/button')
+
+
+    context = {'form':cvdata}
     return render(request, 'CVpages/dilcvdiscard.html', context)
 
 # class IndexView(generic.TemplateView):

@@ -4,10 +4,10 @@ from . import views
 app_name = "CVpages"
 
 urlpatterns = [
-    path('button/', views.button, name="button"),
+    path('button/', views.readcvbtn, name="button"),
     path('ogcreatehtml/', views.ogcreatehtml, name="ogcreatehtml"),
-    path('update_cv/<str:pk>/', views.updatecv, name="update_cv"),
-    path('delete_cv/<str:pk>/', views.deleteCv, name="delete_cv"),
+    path('updatecv/<str:pk>/', views.updatecv, name="updatecv"),
+    path('deletecv/<str:pk>/', views.deleteCv, name="deletecv"),
 
 ]
 
