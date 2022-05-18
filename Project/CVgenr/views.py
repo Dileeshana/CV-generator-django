@@ -67,7 +67,7 @@ def updatecv(request, pk):
     form = CvDetailsForm(instance = cvdata)
 
     if request.method == 'POST':
-        form = Cvdetails(request.POST, instance = cvdata)
+        form = CvDetailsForm(request.POST, instance = cvdata)
         if form.is_valid():
             form.save()
             return redirect('/button')
