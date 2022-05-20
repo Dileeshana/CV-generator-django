@@ -12,7 +12,10 @@ from ckeditor.fields import RichTextField
 
 class Cvdetails(models.Model):
 
-    name = models.CharField(max_length=100, null=True)
+    first_name = models.CharField(max_length=100, null=True)
+    last_name = models.CharField(max_length=100, null=True)
+    description = models.CharField(max_length=500, blank=True, null=True)
+    body = models.CharField(max_length=500, blank=True, null=True)
     nic = models.CharField(max_length=20, null=True)
     date_of_birth = models.DateField(max_length=20, null=True)
     address = models.CharField(max_length=100, null=True)
@@ -25,8 +28,9 @@ class Cvdetails(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
 
+
     def __str__(self):
-        return self.name
+        return self.first_name
 
 class Skill(models.Model):
     class Meta:

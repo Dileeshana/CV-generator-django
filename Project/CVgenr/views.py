@@ -47,20 +47,6 @@ def ogcreatehtml(request):
     return render(request, 'CVpages/dilcvcreate.html', context)
 
 
-# def updatecv(request, pk):
-
-#     cvdata = Cvdetails.objects.get(id=pk)
-#     form = CvDetailsForm(instance= cvdata)
-
-#     if request.method == 'POST':
-#         form = Cvdetails(request.POST, instance= cvdata)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('/button')
-
-#     context = {'form':form}
-#     return render(request, 'CVpages/dilcvcreate.html', context)
-
 def updatecv(request, pk):
 
     cvdata = Cvdetails.objects.get(id=pk)
@@ -87,25 +73,8 @@ def deleteCv(request, pk):
     context = {'form':cvdata}
     return render(request, 'CVpages/dilcvdiscard.html', context)
 
-# class IndexView(generic.TemplateView):
-#     template_name= "CVpages/dil_index.html"
 
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
+def portfoloio(request, pk):
+    portfolio = Cvdetails.objects.get(id=pk)
 
-#         portfolio = Portfolio.objects.filter(is_active=True)
-
-#         context["portfolio"] = portfolio
-#         return context
-
-# class PortfolioView(generic.ListView):
-#     model = Portfolio
-#     template_name = "CVpages/dil_portfolio.html"
-#     paginate_by =10
-
-#     def get_queryset(self):
-#         return super().get_queryset().filter(is_active=True)
-
-# class PortfolioDetailed(generic.DetailView):
-#     model = Portfolio
-#     template_name = "CVpages/dil_portfolio-detail.html"
+    return render(request, 'CVpages/dil_portfolio.html', {'cvdata': portfolio})

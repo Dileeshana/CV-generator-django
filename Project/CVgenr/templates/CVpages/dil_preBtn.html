@@ -39,10 +39,10 @@
 
             {% for cvdata in cvdata %}
                 <tr>
-                    <td>{{cvdata.name}}</td>
+                    <td>{{cvdata.fname}}</td>
                     <td>{{cvdata.nic}}</td>
 
-                    <td><a href="" class="btn btn-primary">Preview</a></td>
+                    <td><a class="btn btn-primary" href="{% url 'CVpages:portfoloio' cvdata.id %}">Preview</a></td>
 
                     <td><a class="btn btn-sm btn-info" href="{% url 'CVpages:updatecv' cvdata.id %}">Edit</a></td>
 
