@@ -20,6 +20,22 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card- card-body">
+    
+                    <form method="GET">
+                        {{cvfilter.form}}
+                        <input type="submit" class="btn btn-primary" value="Search">
+                    </form>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
     {% comment %} <div class="d-grid gap-2 col-6 mx-auto">
         <button class="btn btn-primary" type="button">Preview</button>
         <button class="btn btn-primary" type="button">Edit</button>
@@ -39,7 +55,7 @@
 
             {% for cvdata in cvdata %}
                 <tr>
-                    <td>{{cvdata.fname}}</td>
+                    <td>{{cvdata.first_name}} {{cvdata.last_name}}</td>
                     <td>{{cvdata.nic}}</td>
 
                     <td><a class="btn btn-primary" href="{% url 'CVpages:portfoloio' cvdata.id %}">Preview</a></td>

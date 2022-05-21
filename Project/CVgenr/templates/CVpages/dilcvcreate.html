@@ -10,18 +10,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Create Form</title>
 
+    <style>
+        *{
+            margin: 5px;
+            padding: 5px;
+        }
+        
+        .container{
+            width: 60%;
+            border: 1px solid;
+        }
+    </style>
 </head>
 <body>
     <div class="row">
         <div class="col">
             <center> 
-                <h4><b> Registration </b></h4>
+                <h4><b> Insert your Details </b></h4>
             </center>
         </div>
     </div>
 
     <div class="container">
-        <form action="" method="POST" class="row g-3">
+        <form action="" method="POST">
 
             {% csrf_token %}
             {{form.as_p}}
@@ -77,17 +88,21 @@
         var form_fields = document.getElementsByTagName('input')
         form_fields[1].placeholder='First Name..';
         form_fields[2].placeholder='Last Name..';
-        form_fields[3].placeholder='About your self..';
-        form_fields[4].placeholder='what kind of work you do(type in short terms)..';
-        form_fields[5].placeholder='Your NIC or Passport ID';
-        form_fields[6].placeholder='Date of Birth';
-        form_fields[7].placeholder='Address';
-        form_fields[8].placeholder='Mobile Contact';
-        form_fields[9].placeholder='Home Contact';
-        form_fields[10].placeholder='example@mail.com';
-        form_fields[11].placeholder='Experience';
-        form_fields[12].placeholder='OL Results';
-        form_fields[13].placeholder='AL Stream';
+        {% comment %} form_fields[3].placeholder='About your self..'; {% endcomment %}
+        form_fields[3].placeholder='ect: Web Developer | DevOp..';
+        form_fields[4].placeholder='Your NIC or Passport ID';
+        form_fields[5].placeholder='Date of Birth';
+        form_fields[6].placeholder='Address';
+        form_fields[7].placeholder='Mobile Contact';
+        form_fields[8].placeholder='Home Contact';
+        form_fields[9].placeholder='example@mail.com';
+        {% comment %} form_fields[11].placeholder='I worked with..... from 2019 - 2022'; {% endcomment %}
+        form_fields[10].placeholder='Your tech or language skill';
+        form_fields[11].placeholder='Your tech or language skill';
+        form_fields[12].placeholder='Your tech or language skill';
+        form_fields[13].placeholder='Your tech or language skill';
+        form_fields[14].placeholder='Your tech or language skill';
+        form_fields[15].placeholder='Your tech or language skill';
 
 
         for (var field in form_fields){	

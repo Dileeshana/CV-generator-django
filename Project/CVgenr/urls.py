@@ -10,6 +10,8 @@ urlpatterns = [
     path('deletecv/<str:pk>/', views.deleteCv, name="deletecv"),
     path('portfoloio/<str:pk>/', views.portfoloio, name="portfoloio"),
 
+    path('pdfDown/<str:pk>/', views.render_pdf_view, name="pdfDown"),
+
 ]
 
 

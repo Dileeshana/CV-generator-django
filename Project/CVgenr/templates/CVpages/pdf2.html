@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+     <title>{{cvdata.first_name}} | {{cvdata.your_title}} | FlexIT.lk</title>
+
+     <style type="text/css">
+        * { margin: 0; padding: 0; }
+        body { font: 16px Helvetica, Sans-Serif; line-height: 24px; }
+        .clear { clear: both; }
+        #page-wrap { width: 1000px; margin: 40px auto 60px; }
+        #pic { float: right; margin: -30px 0 0 0; height: 100px}
+        h1 { margin: 0 0 16px 0; padding: 0 0 16px 0; font-size: 42px; font-weight: bold; letter-spacing: -2px; border-bottom: 1px solid #999; }
+        h2 { font-size: 20px; margin: 0 0 6px 0; position: relative; }
+        h2 span { position: absolute; bottom: 0; right: 0; font-style: italic; font-family: Georgia, Serif; font-size: 16px; color: #999; font-weight: normal; }
+        p { margin: 0 0 16px 0; }
+        a { color: #999; text-decoration: none; border-bottom: 1px dotted #999; }
+        a:hover { border-bottom-style: solid; color: black; }
+        ul { margin: 0 0 32px 17px; list-style: none; }
+        #objective { width: 500px; float: left; }
+        #objective p { font-family: Georgia, Serif; font-style: italic; color: #666; }
+        dt { font-style: italic; font-weight: bold; font-size: 20px; text-align: left; padding: 0 26px 0 0; width: 15px; float: left; height: 100px; }
+        dd { width: 600px; float: right; }
+        dd.clear { float: none; margin: 0; height: 15px; }
+     </style>
+</head>
+
+<body>
+
+    <div id="page-wrap">
+    
+        {% comment %} <img src="{{cvdata.avatar}}" alt="Photo of Cthulu" id="pic"> {% endcomment %}
+    
+        <div id="contact-info" class="vcard">
+        
+            <!-- Microformats! -->
+        
+            <h1 class="fn">{{cvdata.first_name}} {{cvdata.last_name}}</h1>
+        
+            <p>
+                Cell: <span class="tel">{{cvdata.mobile_contact}}, {{cvdata.home_contact}}</span><br />
+                Email: <a class="email" href="mailto:{{cvdata.email}}">{{cvdata.email}}</a>
+            </p>
+        </div>
+                
+        <div id="objective">
+            <p>
+                {{cvdata.description}}
+            </p>
+        </div>
+        
+        <div class="clear"></div>
+        
+        <dl>
+            <dd class="clear"></dd>
+            
+            <dt>Education&nbsp;:-</dt>
+            <dd>
+                <h4>{{cvdata.education |linebreaks}}</h4>
+            </dd>
+            
+            <dd class="clear"></dd>
+            
+            <dt>Skills&nbsp;:-</dt>
+            <dd>
+                <ul>
+                    <li>{{cvdata.skill1}}</li>
+                    <li>{{cvdata.skill2}}</li>
+                    <li>{{cvdata.skill3}}</li>
+                    <li>{{cvdata.skill4}}</li>
+                    <li>{{cvdata.skill5}}</li>
+                    <li>{{cvdata.skill6}}</li>
+                </ul>
+            </dd>
+            
+            <dd class="clear"></dd>
+            
+            <dt>Experience&nbsp;:-</dt><br>
+            <dd>
+                <h4>{{cvdata.experience |linebreaks}}</h4>
+            </dd>
+            
+            <dd class="clear"></dd>
+            
+            {% comment %} <dt>Hobbies</dt>
+            <dd>World Domination, Deep Sea Diving, Murder Most Foul</dd> {% endcomment %}
+            
+            {% comment %} <dd class="clear"></dd> {% endcomment %}
+            
+            <dt>References</dt>
+            <dd>&nbsp;Available on request</dd>
+            
+            <dd class="clear"></dd>
+        </dl>
+        
+        <div class="clear"></div>
+    
+    </div>
+
+</body>
+
+</html>
