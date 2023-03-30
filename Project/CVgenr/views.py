@@ -16,19 +16,6 @@ from .filters import *
 from django.template.loader import get_template
 from xhtml2pdf import pisa
 
-# def cvcreate(request):
-
-#     form = CvDetailsForm()
-#     if request.method == 'POST':
-#         #print('',request.POST)
-#         form = CvDetailsForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('/button')
-
-
-#     context = {'form':form}
-#     return render(request, 'CVpages/trial.html', context)
 
 
 def readcvbtn(request):
